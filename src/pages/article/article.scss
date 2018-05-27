@@ -1,0 +1,54 @@
+page-article {
+.like-col{
+    max-width: 22%!important;
+    width: 22%!important;
+}
+.comment-col{
+    max-width: 32%!important;
+    width: 32%!important;
+}
+.edit-col{
+    max-width:20%!important;
+    width: 20%!important;
+}
+.article-title{
+        // color: color($colors,title)!important;
+        color: #42941f!important;
+        font-size: 150%;
+        text-align: center;
+}
+
+.cmt-block{
+    padding: 10px;
+}
+.comment-author{
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 18px;
+}
+.cmt-btn{
+    font-size: 11px;
+
+}
+.cmt-image{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+
+}
+.cmt-text{
+    margin-right: 10px;
+    color: #525252;
+}
+.comment-content{
+    background: #f4f4f4;
+    padding: 5px 5px 5px 25px;
+    border-radius: 20px;
+}
+.author-name{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+}

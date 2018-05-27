@@ -1,0 +1,12 @@
+page-profile {
+.user-image{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+}
+.user-key{
+    font-weight: 500;
+    text-transform: uppercase;
+    color: color($colors,unlike);
+}
+}

@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="app-form" padding>
+  <form #f="ngForm" (ngSubmit)="onLogin(f)">
+    <!-- <div class="loginFields"> -->
+    <!-- <ion-item> -->
+
+    <!-- <ion-label floating>Username</ion-label> -->
+    <input class="app-control" type="text" placeholder="Username" name="username" required ngModel>
+    <!-- </ion-item> -->
+    <!-- <ion-item> -->
+    <!-- <ion-label floating>Password</ion-label> -->
+    <input class="app-control" type="password" placeholder="Password" name="password" required ngModel>
+    <!-- </ion-item> -->
+    <!-- </div> -->
+    <button class="app-button" [disabled]="!f.valid" type="submit">Login</button>
+  </form>
+</ion-content>

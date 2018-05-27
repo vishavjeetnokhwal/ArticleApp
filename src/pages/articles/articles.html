@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Articles</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card (click)="onViewArticle(article)" *ngFor="let article of articles">
+    <img [src]="article.image">
+    <ion-card-content>
+      <p>{{article.desc|short:100}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col col-3>
+        <button ion-button disabled icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{article.likes}} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button disabled icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{article.comments?.length}} Comments</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="time-button" ion-button disabled icon-left clear small>
+          <ion-icon name="time"></ion-icon>{{article.date| days}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

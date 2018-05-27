@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSignUp(f)">
+    <ion-item>
+      <!-- <ion-label floating>Name</ion-label> -->
+      <ion-input type="text" placeholder="Name" name="name" required ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label floating>Phone</ion-label> -->
+      <ion-input type="number" placeholder="Phone" name="phone" required ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label floating>Username</ion-label> -->
+      <ion-input type="text" placeholder="Image Url" name="image" required ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label floating>Username</ion-label> -->
+      <ion-input type="text" placeholder="Username" name="username" required ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label floating>Password</ion-label> -->
+      <ion-input type="password" placeholder="Password" name="password" required ngModel></ion-input>
+    </ion-item>
+
+
+    <button ion-button block [disabled]="!f.valid" type="submit">Sign Up</button>
+
+  </form>
+</ion-content>
+
+
+<!-- <div class="loginFields">
+    <ion-input class="login-inputs" type="text" placeholder="Name" name="name" required ngModel></ion-input>
+    <ion-input class="login-inputs" type="number" placeholder="Phone" name="phone" required ngModel></ion-input>
+    <ion-input class="login-inputs" type="text" placeholder="Username" name="username" required ngModel></ion-input>
+    <ion-input class="login-inputs" type="password" placeholder="Password" name="password" required ngModel></ion-input>
+  </div> -->

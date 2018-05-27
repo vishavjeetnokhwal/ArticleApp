@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <img class="user-image" [src]="user?.image" alt="User Image">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2>{{user?.name}}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-list-header>User Details</ion-list-header>
+    <ion-item>
+      <ion-row>
+        <ion-col class="user-key">
+          Username:
+        </ion-col>
+        <ion-col text-right>
+          {{user?.username}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col class="user-key">
+          Phone:
+        </ion-col>
+        <ion-col text-right>
+          {{user?.phone}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col class="user-key">
+          Activation:
+        </ion-col>
+        <ion-col text-right>
+          <span *ngIf="user?.activated" style="color: green">Activated</span>
+          <span *ngIf="!user?.activated" style="color: red">Pending</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col class="user-key">
+          Account Created on:
+        </ion-col>
+        <ion-col text-right>
+          {{user?.date | date:'mediumDate'}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>

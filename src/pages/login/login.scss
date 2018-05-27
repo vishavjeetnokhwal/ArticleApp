@@ -1,0 +1,58 @@
+page-login {
+    .app-form{
+        padding: 10px;
+        // box-shadow: 0 2px 9px 0 #b1b1b1;
+        background: red;
+    }
+    .app-control{
+        display: block;
+        width: 100%;
+        padding: 3% 7%;
+        font-size: 20px;
+        border-radius: 50px;
+        border: none;
+        color: #525252;
+        box-shadow:inset 0px 0px 1px -1px #525252;
+        background: #bdb8b859; 
+        transition: background 0.2s,box-shadow 0.2s;
+        margin-bottom: 5%;
+    }
+    .app-control:focus{
+        box-shadow:inset 0px 0px 5px 0px #525252;
+        background: transparent;
+        color: #000;
+    }
+    .app-button{
+        box-shadow: 0px 2px 9px 0px #09202f;
+        display: block;
+        width: 100%;
+        padding: 13px;
+        font-size: 20px;
+        border-radius: 50px;
+        background: #0097e6;
+        font-weight: 100;
+        color: white;
+    }
+    
+// ion-item{
+//     padding-left:0px!important;
+// }
+// .loginFields{
+//     background: color($colors,primary);
+//     height: 135px;
+//     padding: 1px 12px;
+//     border-radius: 3px;
+//     margin-top: 30%;
+// }
+// .login-inputs{
+//     background: white;
+//     height: 44px;
+//     border-radius: 3px;
+//     width: 100%;
+//     color: black;
+//     font-size: 17px;
+//     font-weight: 500;
+//     padding-left:10px;
+//     margin:15px 0;
+// }
+}

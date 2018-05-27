@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Article Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+
+    <h1 class="article-title">{{article?.title}}</h1>
+
+
+    <img [src]="article?.image">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="article?.author?.image">
+      </ion-avatar>
+      <h2>{{article?.author?.name}}</h2>
+      <p>{{article?.date | date:'mediumDate'}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <p>{{article?.desc}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col class="like-col">
+        <button *ngIf="!isLiked" (click)="onLike()" color="unlike" ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>Like</div>
+        </button>
+
+        <button (click)="onLike()" *ngIf="isLiked" ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>Liked</div>
+        </button>
+
+      </ion-col>
+      <ion-col class="comment-col">
+        <button (click)="onComment()" ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>Comment</div>
+        </button>
+      </ion-col>
+
+      <ion-col *ngIf="user?.isAdmin || user?.id==article?.author?.id" class="edit-col">
+        <button (click)="onEditArticle()" ion-button icon-left clear small>
+          <ion-icon name="create"></ion-icon>
+          <div>Edit</div>
+        </button>
+      </ion-col>
+      <ion-col *ngIf="user?.isAdmin || user?.id==article?.author?.id" class="delete-col">
+        <button (click)="deleteArticle()" ion-button icon-left color="danger" clear small>
+          <ion-icon name="trash"></ion-icon>
+          <div>Delete</div>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>
+
+  <ion-row class="cmt-block" *ngFor="let comment of article?.comments;let i=index">
+    <ion-col col-2>
+      <img class="cmt-image" [src]="comment?.author?.image">
+    </ion-col>
+    <ion-col class="comment-content">
+      <p class="author-name">{{comment?.author?.name}}</p>
+      <p class="cmt-text">{{comment?.content}}</p>
+      <ion-row>
+        <ion-col *ngIf="user?.isAdmin || user?.id==comment?.author?.id" text-right>
+          <button class="cmt-btn" (click)="onEditComment(comment,i)" ion-button icon-left clear small>
+            <ion-icon name="create"></ion-icon>
+            <div>Edit</div>
+          </button>
+          <button class="cmt-btn" (click)="onDeleteComment(comment._id,i)" ion-button icon-left color="danger" clear small>
+            <ion-icon name="trash"></ion-icon>
+            <div>Delete</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+
+  <!-- <ion-row>
+      <ion-col col-1>
+        <img class="comment-author" [src]="article?.author?.image">
+      </ion-col>
+      <ion-col>
+        <p>p akjsbasd askjdhasd assjdkajsd alksdjasd jsdhkajhdkjhaksdls asd asdhh asjhd aaoiushd knaksjd oi njkasdh oasdlkjas
+          dioasdnlkasd ao</p>
+      </ion-col>
+    </ion-row> -->
+
+</ion-content>
